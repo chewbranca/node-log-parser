@@ -33,6 +33,9 @@ library in your Node.js program.
 	$ git submodule init
 	$ git submodule update
 
+	$ cp config.js.sample config.js
+	$ vim config.js
+
 The submodule dependency is
 [rsms/node-couchdb-min](http://github.com/rsms/node-couchdb-min). I have not
 modified this fork yet, however I expect to shortly as this project progresses.

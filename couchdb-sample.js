@@ -3,11 +3,10 @@
 /*
  * Settings 
  */
-var file = '/home/chewbranca/src/rails_app/log/production.log',
-    couch_db_name = 'logs';
+var config = require('./config').config;
 
 var sys = require('sys'), couchdb = require('./lib/node-couchdb-min/couchdb'), parser = require('./log-parser');
-var logsDB = new couchdb.Db(couch_db_name);
+var logsDB = new couchdb.Db(config.couch_db_name);
 var debug = false;
 if (debug) parser.setDebug(debug);
 
@@ -32,4 +31,4 @@ var couchdb_save_func = function(logs) {
 	});
 };
 
-parser.process_logs(file, parser.railsLogParser, couchdb_save_func);
+parser.process_logs(config.file, parser.railsLogParser, couchdb_save_func);

@@ -1,0 +1,4 @@
+exports.config = {
+	"file" : "/home/chewbranca/src/rails_app/log/production.log",
+	"couch_db_name" : "logs"
+};
